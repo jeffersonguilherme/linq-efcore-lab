@@ -1,3 +1,4 @@
+using LinqEfCoreLab.Data;
 using LinqEfCoreLab.DTOs;
 using LinqEfCoreLab.Entities;
 using LinqEfCoreLab.Interfaces;
@@ -6,9 +7,17 @@ namespace LinqEfCoreLab.Repository;
 
 public class ProductRepository : IProductRepository
 {
-    public Task AddAsync(Product product)
+    private readonly AppDbContext _context;
+
+    public ProductRepository(AppDbContext context)
     {
-        throw new NotImplementedException();
+        _context = context;
+    }
+
+    public async Task AddAsync(Product product)
+    {
+        await _context.Products.AddAsync(product);
+        await _context.SaveChangesAsync();
     }
 
     public Task<int> CountAsync()
