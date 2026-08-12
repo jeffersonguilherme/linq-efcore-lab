@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LinqEfCoreLab")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fffb86b12f67e08baea5286e39396bed1de7287")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af7dc0f64a84f236b3d39a539f7ab3f4ab5ad164")]
 [assembly: System.Reflection.AssemblyProductAttribute("LinqEfCoreLab")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LinqEfCoreLab")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
