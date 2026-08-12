@@ -1,0 +1,6 @@
+@LinqEfCoreLab_HostAddress = http://localhost:5001
+
+GET {{LinqEfCoreLab_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
