@@ -1,5 +1,7 @@
 using LinqEfCoreLab.Data;
 using LinqEfCoreLab.Data.Seed;
+using LinqEfCoreLab.Interfaces;
+using LinqEfCoreLab.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +17,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // Registra o contexto usando SQLite
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(connectionString));
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 

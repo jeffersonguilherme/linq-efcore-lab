@@ -14,9 +14,16 @@ public class ProductRepository : IProductRepository
         _context = context;
     }
 
-    public async Task AddAsync(Product product)
+    public async Task AddAsync(ProductCreateDto product)
     {
-        await _context.Products.AddAsync(product);
+        var productDto = Product.Create(
+            product.Name,
+            product.Description,
+            product.Price,
+            product.StockQuantity
+        );
+
+        await _context.Products.AddAsync(productDto);
         await _context.SaveChangesAsync();
     }
 

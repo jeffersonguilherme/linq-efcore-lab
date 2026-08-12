@@ -8,7 +8,7 @@ public interface IProductRepository
     // CRUD
     Task<Product?> GetByIdAsync(Guid id);
     Task<List<Product>> GetAllAsync();
-    Task AddAsync(Product product);
+    Task AddAsync(ProductCreateDto product);
     Task UpdateAsync(Product product);
     Task DeleteAsync(Product product);
     // Pesquisa

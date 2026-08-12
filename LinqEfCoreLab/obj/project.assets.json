@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net8.0": {
       "Humanizer.Core/2.14.1": {
@@ -2824,19 +2824,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jefferson\\.nuget\\packages\\": {}
+    "C:\\Users\\jefferson.silva\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jefferson\\Documents\\GitHub\\linq-efcore-lab\\LinqEfCoreLab\\LinqEfCoreLab.csproj",
+      "projectUniqueName": "C:\\Users\\jefferson.silva\\Documents\\GitHub\\linq-efcore-lab\\LinqEfCoreLab\\LinqEfCoreLab.csproj",
       "projectName": "LinqEfCoreLab",
-      "projectPath": "C:\\Users\\Jefferson\\Documents\\GitHub\\linq-efcore-lab\\LinqEfCoreLab\\LinqEfCoreLab.csproj",
-      "packagesPath": "C:\\Users\\Jefferson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jefferson\\Documents\\GitHub\\linq-efcore-lab\\LinqEfCoreLab\\obj\\",
+      "projectPath": "C:\\Users\\jefferson.silva\\Documents\\GitHub\\linq-efcore-lab\\LinqEfCoreLab\\LinqEfCoreLab.csproj",
+      "packagesPath": "C:\\Users\\jefferson.silva\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jefferson.silva\\Documents\\GitHub\\linq-efcore-lab\\LinqEfCoreLab\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jefferson\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\jefferson.silva\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2846,6 +2846,7 @@
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {}
         }
@@ -2859,10 +2860,12 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net8.0": {
+        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
@@ -2903,7 +2906,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

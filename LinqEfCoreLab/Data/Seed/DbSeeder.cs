@@ -24,16 +24,13 @@ public static class DbSeeder
         var products = new List<Product>();
         for (int i = 1; i <= 30; i++)
         {
-            products.Add(new Product
-            {
-                Id = Guid.NewGuid(),
-                Name = $"{categorias[i % categorias.Length]} Modelo {i:D2}",
-                Description = $"Descrição do produto número {i}, categoria {categorias[i % categorias.Length]}.",
-                Price = Math.Round((decimal)(10 + (i * 7.35) % 490), 2), // valores variados entre ~10 e ~500
-                StockQuantity = (i * 3) % 100 + 1,
-                CreatedAt = DateTime.UtcNow.AddDays(-i * 2),
-                UpdatedAt = i % 4 == 0 ? DateTime.UtcNow.AddDays(-i) : null
-            });
+            var product =  Product.Create(   
+                name : $"{categorias[i % categorias.Length]} Modelo {i:D2}",
+                description : $"Descrição do produto número {i}, categoria {categorias[i % categorias.Length]}.",
+                price : Math.Round((decimal)(10 + (i * 7.35) % 490), 2), // valores variados entre ~10 e ~500
+                stockQuantity : (i * 3) % 100 + 1
+            );
+            products.Add(product);
         }
         await context.Set<Product>().AddRangeAsync(products);
 
@@ -46,15 +43,14 @@ public static class DbSeeder
         var clientes = new List<Cliente>();
         for (int i = 0; i < nomesClientes.Length; i++)
         {
-            clientes.Add(new Cliente
-            {
-                Id = Guid.NewGuid(),
-                Nome = nomesClientes[i],
-                Email = $"{nomesClientes[i].Split(' ')[0].ToLower()}.{i}@email.com",
-                Cpf = $"{100000000 + i * 1111111}",
-                DataCadastro = DateTime.UtcNow.AddMonths(-(i + 1)),
-                Ativo = i != 4 // um cliente inativo, só para ter variação nos filtros
-            });
+            var cliente = Cliente.Create
+            (
+                nome : nomesClientes[i],
+                email : $"{nomesClientes[i].Split(' ')[0].ToLower()}.{i}@email.com",
+                cpf : $"{100000000 + i * 1111111}",
+                ativo : i != 4 // um cliente inativo, só para ter variação nos filtros
+            );
+            clientes.Add(cliente);
         }
         await context.Set<Cliente>().AddRangeAsync(clientes);
 

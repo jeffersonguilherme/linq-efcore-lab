@@ -1,3 +1,4 @@
+using LinqEfCoreLab.DTOs;
 using LinqEfCoreLab.Entities;
 using LinqEfCoreLab.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +16,7 @@ public class ProductsController : ControllerBase
         _repository = repository;
     }
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] Product product)
+    public async Task<IActionResult> Create([FromBody] ProductCreateDto product)
     {
         await _repository.AddAsync(product);
         return Ok(product);
