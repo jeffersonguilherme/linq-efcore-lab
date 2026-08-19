@@ -15,7 +15,7 @@ public class ProductsController : ControllerBase
     {
         _repository = repository;
     }
-    [HttpPost]
+    [HttpPost("create")]
     public async Task<IActionResult> Create([FromBody] ProductCreateDto product)
     {
         await _repository.AddAsync(product);
