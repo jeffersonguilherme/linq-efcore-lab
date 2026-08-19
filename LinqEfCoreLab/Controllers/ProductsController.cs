@@ -21,4 +21,16 @@ public class ProductsController : ControllerBase
         await _repository.AddAsync(product);
         return Ok(product);
     }
+    [HttpGet("count")]
+    public async Task<IActionResult> Count()
+    {
+        return Ok(await _repository.CountAsync());
+        
+    }
+    [HttpGet("countMaxValue")]
+    public async Task<IActionResult> CountMoreExpensiveThanAsync([FromQuery] decimal price)
+    {
+        var result = await _repository.CountMoreExpensiveThanAsync(price);
+        return Ok(result);
+    }
 }

@@ -2,6 +2,7 @@ using LinqEfCoreLab.Data;
 using LinqEfCoreLab.DTOs;
 using LinqEfCoreLab.Entities;
 using LinqEfCoreLab.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace LinqEfCoreLab.Repository;
 
@@ -27,14 +28,15 @@ public class ProductRepository : IProductRepository
         await _context.SaveChangesAsync();
     }
 
-    public Task<int> CountAsync()
+    public async Task<int> CountAsync()
     {
-        throw new NotImplementedException();
+        return await _context.Products.CountAsync();
     }
 
-    public Task<int> CountMoreExpensiveThanAsync(decimal price)
+    public async Task<int> CountMoreExpensiveThanAsync(decimal price)
     {
-        throw new NotImplementedException();
+        var valor = await _context.Products.Where(p => p.Price > price).CountAsync();
+        return valor;
     }
 
     public Task DeleteAsync(Product product)
