@@ -54,9 +54,9 @@ public class ProductRepository : IProductRepository
         throw new NotImplementedException();
     }
 
-    public Task<List<Product>> GetAllAsync()
+    public async Task<List<Product>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _context.Products.AsNoTracking().ToListAsync();         
     }
 
     public Task<decimal> GetAveragePriceAsync()
@@ -129,9 +129,9 @@ public class ProductRepository : IProductRepository
         throw new NotImplementedException();
     }
 
-    public Task<List<Product>> GetProductsMoreExpensiveThanAsync(decimal price)
+    public async Task<List<Product>> GetProductsMoreExpensiveThanAsync(decimal price)
     {
-        throw new NotImplementedException();
+        return await _context.Products.Where(p=> p.Price > price).ToListAsync();
     }
 
     public Task<List<Product>> GetTopCheapestAsync(int quantity)

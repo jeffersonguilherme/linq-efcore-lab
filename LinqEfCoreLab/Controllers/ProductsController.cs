@@ -33,4 +33,18 @@ public class ProductsController : ControllerBase
         var result = await _repository.CountMoreExpensiveThanAsync(price);
         return Ok(result);
     }
+
+    [HttpGet("getall")]
+    public async Task<IActionResult> GetAllAsync()
+    {
+        var result = await _repository.GetAllAsync();
+        return Ok(result);
+    }
+
+    [HttpGet("getProductsMoreExpensiveThan")]
+    public async Task<IActionResult> GetProductsMoreExpensiveThan([FromQuery] decimal price)
+    {
+        var result = await _repository.GetProductsMoreExpensiveThanAsync(price);
+        return Ok(result);
+    }
 }
